@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "erfmc:prawn"
+  },
+  "result": "erfmc:boiled_prawn",
+  "experience": 0.9,
+  "cookingtime": 400
+}

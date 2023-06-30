@@ -1,0 +1,6 @@
+{
+  "parent": "erfmc:block/mythrite_block",
+  "textures": {
+    "all": "erfmc:block/mythrite_block"
+  }
+}
