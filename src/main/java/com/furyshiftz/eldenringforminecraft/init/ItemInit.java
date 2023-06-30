@@ -12,18 +12,20 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import static com.furyshiftz.eldenringforminecraft.init.CreativeTabInit.addToTab;
+
 public class ItemInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, EldenRingForMinecraft.MODID);
     // Basic Items
-    public static final RegistryObject<Item>  MYTHRITE_INGOT = ITEMS.register("mythrite_ingot",
-            () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.RARE)));
-    public static final RegistryObject<Item>  SPIRIT_CALLING_BELL = ITEMS.register("spirit_calling_bell",
-            () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item>  MYTHRITE_INGOT = addToTab(ITEMS.register("mythrite_ingot",
+            () -> new Item(new Item.Properties().stacksTo(64).rarity(Rarity.RARE))));
+    public static final RegistryObject<Item>  SPIRIT_CALLING_BELL = addToTab(ITEMS.register("spirit_calling_bell",
+            () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC))));
     //Music Discs
-    public static final RegistryObject<Item>  GOSKIN_APOSTLE_DISC = ITEMS.register("godskin_apostle_music_disc",
-            () -> new RecordItem(4, SoundInit.GODSKIN_APOSTLE_THEME, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON), 5500));
+    public static final RegistryObject<Item>  GOSKIN_APOSTLE_DISC = addToTab(ITEMS.register("godskin_apostle_music_disc",
+            () -> new RecordItem(4, SoundInit.GODSKIN_APOSTLE_THEME, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON), 5500)));
     // Food
-    public static final RegistryObject<Item>  PRAWN = ITEMS.register("prawn",
+    public static final RegistryObject<Item>  PRAWN = addToTab(ITEMS.register("prawn",
             () -> {
                 return new Item(new Item.Properties()
                         .food(new FoodProperties.Builder()
@@ -32,9 +34,9 @@ public class ItemInit {
                                 .saturationMod(0.3F)
                                 .effect(new MobEffectInstance(MobEffects.POISON, 100, 0), 0.6F).build())
                                 .rarity(Rarity.COMMON));
-            });
-    public static final RegistryObject<Item>  BOILED_PRAWN = ITEMS.register("boiled_prawn",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().fast().nutrition(5).saturationMod(0.6F).build())));
+            }));
+    public static final RegistryObject<Item>  BOILED_PRAWN = addToTab(ITEMS.register("boiled_prawn",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().fast().nutrition(5).saturationMod(0.6F).build()))));
     // Block Items
-    public static final RegistryObject<BlockItem> MYTHRITE_BLOCK = ITEMS.register("mythrite_block", () -> new BlockItem(BlockInit.MYTHRITE_BLOCK.get(), new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<BlockItem> MYTHRITE_BLOCK = addToTab(ITEMS.register("mythrite_block", () -> new BlockItem(BlockInit.MYTHRITE_BLOCK.get(), new Item.Properties().rarity(Rarity.RARE))));
 }

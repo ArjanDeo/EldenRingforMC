@@ -1,6 +1,7 @@
 package com.furyshiftz.eldenringforminecraft;
 
 import com.furyshiftz.eldenringforminecraft.init.BlockInit;
+import com.furyshiftz.eldenringforminecraft.init.CreativeTabInit;
 import com.furyshiftz.eldenringforminecraft.init.ItemInit;
 import com.furyshiftz.eldenringforminecraft.init.SoundInit;
 import net.minecraft.client.resources.sounds.Sound;
@@ -17,6 +18,8 @@ public class EldenRingForMinecraft {
 
         ItemInit.ITEMS.register(bus);
         BlockInit.BLOCKS.register(bus);
+        CreativeTabInit.TABS.register(bus);
         SoundInit.SOUND_EVENTS.register(bus);
+
     }
 }
